@@ -1,0 +1,11 @@
+[package]
+name = "bi_rust"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Prototype de format compact de messages pour le projet BIBRAI/BIRUST"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]

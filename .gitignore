@@ -1,0 +1,11 @@
+# Cargo build outputs
+/target/
+
+# IDE and local environment
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# PlatformIO outputs, if a hardware project is added later
+.pio/
