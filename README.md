@@ -21,7 +21,7 @@ Les termes **Double Flag**, **V3/V4**, **BIBRAI** et **BIRUST** sont des noms de
 - [`docs/05-pilote-terrain.md`](docs/05-pilote-terrain.md) — protocole de pilote et checklist
 - [`docs/06-notes-juridiques.md`](docs/06-notes-juridiques.md) — points à examiner par la conseillère juridique
 - [`docs/roadmap.md`](docs/roadmap.md) — étapes de développement
-- [`src/lib.rs`](src/lib.rs) — bibliothèque Rust de démonstration
+- [`src/lib.rs`](src/lib.rs) — trame binaire v1 et décodeur textuel BIBRAI indépendant
 - [`scripts/Build_Script.ps1`](scripts/Build_Script.ps1) — tests et compilation locale Rust
 
 ## Compiler et tester

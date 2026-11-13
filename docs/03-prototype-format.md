@@ -17,9 +17,25 @@ Exemple de classe quotidienne, symbole 7 : `01 00 07`. L’exemple fait 3 octets
 ## Propriétés et limites
 
 - La longueur et les valeurs de version/classe sont validées par `Frame::decode`.
-- Un identifiant de symbole ne permet de retrouver un texte que si les nœuds partagent un dictionnaire versionné, absent de ce prototype.
+- Un identifiant de symbole ne permet de retrouver un texte que si les nœuds partagent un dictionnaire versionné; ce dictionnaire binaire n'est pas défini par ce prototype.
 - Aucune somme de contrôle, signature, chiffrement, horodatage, expiration, identifiant d’émetteur, fragmentation ou protection anti-rejeu.
 - La catégorie « prioritaire » n’est pas une preuve d’origine et ne doit pas déclencher seule une action de secours.
+
+## Décodeur textuel BIBRAI
+
+`decode_bibrai_text` reconnaît les mots-clés textuels complets ci-dessous et retourne leur interprétation statique. La comparaison ignore la casse ASCII et les espaces ASCII en bordure; `ÉVACUER` et `éVACUER` sont aussi acceptés. Les phrases contenant un mot-clé, les préfixes et la ponctuation supplémentaire ne sont pas décodés.
+
+| Mot-clé | Interprétation pédagogique | Interprétation éducative |
+|---|---|---|
+| `FEU` | Incendie | Incendie |
+| `SAUVE` | Secours | Secours |
+| `ALERTE` | Attention | Attention |
+| `EVACUER` | Sortir | Evacuation |
+| `URGENCE` | Probleme | Urgence |
+| `SECURITE` | Securite | Securite |
+| `FAIL-SAFE` | Secours | Mode secours |
+
+Ce décodeur est distinct de `Frame::decode`: il ne modifie pas la trame binaire v1, ne transmet aucun message et ne certifie pas l'origine ni la signification opérationnelle d'un texte reçu.
 
 ## Mesure de compression à réaliser
 
